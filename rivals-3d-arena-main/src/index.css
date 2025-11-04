@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Gaming Dark Theme - Neon Cyber Aesthetic */
+    --background: 240 10% 3.9%;
+    --foreground: 180 100% 90%;
+
+    --card: 240 8% 8%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 240 8% 8%;
+    --popover-foreground: 180 100% 90%;
+
+    /* Neon Electric Blue Primary */
+    --primary: 187 100% 50%;
+    --primary-foreground: 240 10% 3.9%;
+
+    /* Cyber Purple Secondary */
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 180 100% 90%;
+
+    /* Electric Pink Accent */
+    --accent: 338 100% 50%;
+    --accent-foreground: 180 100% 90%;
+
+    --muted: 240 8% 15%;
+    --muted-foreground: 180 30% 65%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 8% 15%;
+    --input: 240 8% 15%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Neon Glow Effects */
+    --glow-primary: 187 100% 50%;
+    --glow-secondary: 258 90% 66%;
+    --glow-accent: 338 100% 50%;
+
+    /* Sidebar Dark Gaming Theme */
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 8% 12%;
+    --sidebar-accent-foreground: 187 100% 50%;
+    --sidebar-border: 240 8% 15%;
+    --sidebar-ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Neon Glow Utilities */
+  .glow-text-primary {
+    text-shadow: 0 0 10px hsl(var(--glow-primary) / 0.5),
+                 0 0 20px hsl(var(--glow-primary) / 0.3),
+                 0 0 30px hsl(var(--glow-primary) / 0.2);
+  }
+
+  .glow-text-secondary {
+    text-shadow: 0 0 10px hsl(var(--glow-secondary) / 0.5),
+                 0 0 20px hsl(var(--glow-secondary) / 0.3),
+                 0 0 30px hsl(var(--glow-secondary) / 0.2);
+  }
+
+  .glow-text-accent {
+    text-shadow: 0 0 10px hsl(var(--glow-accent) / 0.5),
+                 0 0 20px hsl(var(--glow-accent) / 0.3),
+                 0 0 30px hsl(var(--glow-accent) / 0.2);
+  }
+
+  .glow-border-primary {
+    box-shadow: 0 0 15px hsl(var(--glow-primary) / 0.4),
+                0 0 30px hsl(var(--glow-primary) / 0.2),
+                inset 0 0 15px hsl(var(--glow-primary) / 0.1);
+  }
+
+  .glow-border-secondary {
+    box-shadow: 0 0 15px hsl(var(--glow-secondary) / 0.4),
+                0 0 30px hsl(var(--glow-secondary) / 0.2),
+                inset 0 0 15px hsl(var(--glow-secondary) / 0.1);
+  }
+
+  .glow-border-accent {
+    box-shadow: 0 0 15px hsl(var(--glow-accent) / 0.4),
+                0 0 30px hsl(var(--glow-accent) / 0.2),
+                inset 0 0 15px hsl(var(--glow-accent) / 0.1);
+  }
+
+  /* Gradient Backgrounds */
+  .bg-gradient-gaming {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(240 10% 5%) 50%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .bg-gradient-neon {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--glow-primary) / 0.1) 0%,
+      hsl(var(--glow-secondary) / 0.1) 50%,
+      hsl(var(--glow-accent) / 0.1) 100%
+    );
+  }
+}
